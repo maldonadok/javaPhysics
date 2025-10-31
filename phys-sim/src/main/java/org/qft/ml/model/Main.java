@@ -18,7 +18,22 @@ public class Main {
     }
 
     private static void manifoldTesting() {
+        frame toFocusOn = new frame(true);
+        manifold m = new manifold();
+        m.setMainFrame(toFocusOn);
 
+        frame another = new frame();
+
+        m.addFrame(another);
+
+        // Here we'd like to see both frames
+        // Start with their respective coordinates.
+
+        m.getMainFrame().listAllVertices();
+        System.out.println("---------------Compare---------------");
+        m.getListOfFrames().get(1).listAllVertices();
+        System.out.println("---------------Compare---------------");
+        m.getListOfFrames().get(0).listAllVertices();
     }
 
     private static void initialTesting() {

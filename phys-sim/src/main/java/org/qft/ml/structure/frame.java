@@ -2,7 +2,10 @@ package org.qft.ml.structure;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.qft.ml.objects.matter;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 // Consists of 8 vertices
@@ -68,10 +71,24 @@ public class frame {
         }
     }
 
+    // Distinction to make here:
+    // Listing methods should simply print. Get methods should return actual objects
+    public void listAllVertices(){
+        if(!this.Vertices.isEmpty()) {
+            for (Map.Entry<Integer,point> entry : this.Vertices.entrySet()){
+                System.out.println("Key: " + entry.getKey() + ", Value: ("
+                        + entry.getValue().getX() + ", "
+                        + entry.getValue().getY() + ", "
+                        + entry.getValue().getZ() + ")");
+            }
+        }
+    }
+
     public boolean hasObject() {
         return m.exists;
     }
 
+    // Consult hand notes for the below.
     public boolean isValidFace(){
         return false;
     }

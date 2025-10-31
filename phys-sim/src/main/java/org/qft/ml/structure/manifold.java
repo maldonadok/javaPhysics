@@ -10,7 +10,7 @@ public class manifold {
     // We'll describe the manifold as a hashset containing these lists of frames
     HashSet<List<frame>> sheetOfFrames;
     public manifold(){
-        this.mainFrame = new frame();
+        this.mainFrame = new frame(true);
         this.listOfFrames = new ArrayList<>();
         this.listOfFrames.add(this.mainFrame);
         this.sheetOfFrames = new HashSet<>();
@@ -21,6 +21,10 @@ public class manifold {
         return listOfFrames;
     }
 
+    public void addFrame(frame f){
+        this.listOfFrames.add(f);
+    }
+
     public frame getMainFrame() {
         return mainFrame;
     }
@@ -28,4 +32,9 @@ public class manifold {
     public HashSet<List<frame>> getSheetOfFrames(){
         return sheetOfFrames;
     }
+
+    public frame setMainFrame(frame f){
+        return this.mainFrame = f;
+    }
 }
+
