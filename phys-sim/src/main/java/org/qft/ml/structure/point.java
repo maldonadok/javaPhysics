@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // A simple point of space described by coordinates
-public class point {
+public class point implements vectorInterface{
     // Let's let default values be 0 for now.
     public double x = 0;
     public double y = 0;
@@ -34,7 +34,8 @@ public class point {
         this.z = z;
     }
 
-    public List<Double> getCoordinates(){
+    @Override
+    public List<Double> returnValuesAsList() {
         List<Double> toReturn = new ArrayList<>();
         toReturn.add(this.x);
         toReturn.add(this.y);
@@ -63,10 +64,11 @@ public class point {
         return new point(distX,distY,distZ);
     }
 
-    public Double getDistanceAsScalar(point a, point b) {
+    public Double getDistanceAsScalarValue(point a, point b) {
         double distX = b.getX() - a.getX();
         double distY = b.getY() - a.getY();
         double distZ = b.getZ() - a.getZ();
         return Math.sqrt(distX+distY+distZ);
     }
 }
+

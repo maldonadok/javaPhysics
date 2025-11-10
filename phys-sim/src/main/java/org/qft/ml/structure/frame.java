@@ -61,7 +61,7 @@ public class frame {
 
         if (e){
             // If matter is in this frame, we put the default coordinates into the frame object,
-            // then turn the exists value into true, then create a pair of the coordinates and the object
+            // then turn the existing value into true, then create a pair of the coordinates and the object
             this.Vertices.put(9, this.objectCenterInFrame);
             m.exists = true;
             pair = new ImmutablePair<>(this.objectCenterInFrame, this.m);
